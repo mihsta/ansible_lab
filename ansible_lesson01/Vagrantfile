@@ -13,6 +13,20 @@ Vagrant.configure("2") do |config|
     control.vm.network "forwarded_port", guest: 80, host: 8080
     control.vm.network "private_network", ip: "192.168.56.110"
     control.vm.provision "shell", inline: $hostsfile_update
+        
+    #vagrant provision
+    control.vm.provision "shell", inline: <<-SHELL
+    yum install -y epel-release    
+    yum install -y ansible
+    #su ansible
+    useradd ansible    
+    echo password | passwd --stdin ansible
+    sudo echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+    
+    ssh-keygen
+    SHELL
+    
+
     control.vm.provider "virtualbox" do |v|
     config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--audio", "none"]
@@ -20,6 +34,7 @@ Vagrant.configure("2") do |config|
  	v.memory = 4096
 	v.cpus = 2
     end
+
   end
 
   config.vm.define "node1" do |node1|
@@ -27,6 +42,12 @@ Vagrant.configure("2") do |config|
     node1.vm.hostname = "node1.example.com"
     node1.vm.network "private_network", ip: "192.168.56.111"
     node1.vm.provision "shell", inline: $hostsfile_update
+    #vagrant provision
+    node1.vm.provision "shell", inline: <<-SHELL
+    useradd ansible    
+    echo password | passwd --stdin ansible
+    echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+    SHELL
     config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--audio", "none"]
     end
@@ -37,6 +58,12 @@ Vagrant.configure("2") do |config|
     node2.vm.hostname = "node2.example.com"
     node2.vm.network "private_network", ip: "192.168.56.112"
     node2.vm.provision "shell", inline: $hostsfile_update
+    #vagrant provision
+    node2.vm.provision "shell", inline: <<-SHELL
+    useradd ansible    
+    echo password | passwd --stdin ansible
+    echo "ansible ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/ansible
+    SHELL
     config.vm.provider "virtualbox" do |vb|
       vb.customize ["modifyvm", :id, "--audio", "none"]
     end
