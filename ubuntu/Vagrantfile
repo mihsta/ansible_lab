@@ -70,5 +70,7 @@ Vagrant.configure("2") do |config|
   #   apt-get install -y apache2
       sudo apt-get install ubuntu-desktop -y
   #   sudo apt-get install virtualbox-guest-additions-iso -y
+      sudo apt-get install tree -y
+      sudo apt-get install git bash-completion -y
    SHELL
 end
