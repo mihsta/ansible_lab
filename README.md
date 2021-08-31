@@ -11,6 +11,6 @@
   vagrant destroy  
   vagrant box list
 # git commands
-  git log --all --oneline --graph --decorate
-  git checkout env
-  git checkout main
+  git log --all --oneline --graph --decorate  
+  git checkout env  
+  git checkout main  
