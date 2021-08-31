@@ -9,10 +9,10 @@
     ssh-keygen
     ssh-copy-id node1 && ssh-copy-id node2
     cd /home/ansible/
-# ansible commands  
+## ansible commands  
     ansible --version
     ansible all -i inventory --list-hosts
-# vagrant commands
+## vagrant commands
     vagrant init hashicorp/bionic64  
     vagrant up  
     vagrant reload  
@@ -22,7 +22,7 @@
     vagrant suspend  
     vagrant destroy  
     vagrant box list
-# git commands
+## git commands
     git log --all --oneline --graph --decorate  
     git checkout env  
     git checkout main  
