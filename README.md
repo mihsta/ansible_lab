@@ -10,19 +10,19 @@
     ssh-copy-id node1 && ssh-copy-id node2
     cd /home/ansible/
 # ansible commands  
-  ansible --version
-  ansible all -i inventory --list-hosts
+    ansible --version
+    ansible all -i inventory --list-hosts
 # vagrant commands
-  vagrant init hashicorp/bionic64  
-  vagrant up  
-  vagrant reload  
-  vagrant provision  
-  vagrant ssh 'NAME'  
-  vagrant halt  
-  vagrant suspend  
-  vagrant destroy  
-  vagrant box list
+    vagrant init hashicorp/bionic64  
+    vagrant up  
+    vagrant reload  
+    vagrant provision  
+    vagrant ssh 'NAME'  
+    vagrant halt  
+    vagrant suspend  
+    vagrant destroy  
+    vagrant box list
 # git commands
-  git log --all --oneline --graph --decorate  
-  git checkout env  
-  git checkout main  
+    git log --all --oneline --graph --decorate  
+    git checkout env  
+    git checkout main  
