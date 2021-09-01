@@ -17,7 +17,10 @@
     ansible-doc -l
     ansible-doc package
     ansible-doc -s package
-    ansible-playbook --syntax-check example.yaml
+    ansible-playbook -v playbook.yml
+## regex
+    https://regex101.com/
+    https://question-it.com/questions/2028065/ansible-lineinfile-izmenit-stroku      
 ## vagrant commands
     vagrant init hashicorp/bionic64  
     vagrant up  
