@@ -1,0 +1,24 @@
+- name: install_httpd
+  hosts: all
+  user: ansible
+  become: yes
+  become_method: sudo
+  become_user: root
+ 
+  tasks:
+  - name: Uninstall packages
+    package: name={{ item }} state=absent
+    with_items:
+      - 'httpd'     
+ 
+  - name: close http-port
+    firewalld:
+      zone: dmz
+      service: http
+      permanent: yes
+      state: disabled
+ 
+  - name: Create html-file
+    file:
+      path: /var/www/html/index.html
+      state: absent

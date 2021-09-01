@@ -1,0 +1,15 @@
+- name: edit grub
+  hosts: all
+  user: ansible
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Grub edit
+    lineinfile:
+      state: present
+      dest: /etc/default/grub
+      backrefs: yes
+      regexp: '^(GRUB_CMDLINE_LINUX=(?!.* ifnames)\"[^\"]+)(\".*)'
+      line: '\1 ifnames=1\2'

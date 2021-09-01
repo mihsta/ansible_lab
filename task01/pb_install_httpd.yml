@@ -1,0 +1,31 @@
+- name: install_httpd
+  hosts: all
+  user: ansible
+  become: yes
+  become_method: sudo
+  become_user: root
+
+  tasks:
+  - name: Install packages
+    package: name={{ item }} state=present
+    with_items:
+      - 'httpd'
+      - 'firewalld'
+
+  - name: Create html-file
+    copy:
+      dest: /var/www/html/index.html
+      content: |
+        Welcome to my web server
+
+  - name: Service start
+    service: name={{ item }} state=started
+    with_items:
+      - 'httpd'
+      - 'firewalld'
+
+  - name: Open http-port
+    firewalld:      
+      service: http
+      permanent: yes
+      state: enabled
