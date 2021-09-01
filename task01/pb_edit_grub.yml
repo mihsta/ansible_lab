@@ -7,9 +7,14 @@
 
   tasks:
   - name: Grub edit
-    lineinfile:
-      state: present
-      dest: /etc/default/grub
-      backrefs: yes
-      regexp: '^(GRUB_CMDLINE_LINUX=(?!.* ifnames)\"[^\"]+)(\".*)'
-      line: '\1 ifnames=1\2'
+    replace:
+      path: /etc/default/grub
+      regexp: '^(GRUB_CMDLINE_LINUX=(?:(?![" ]{{ item.option | regex_escape }}=).)*)(?:[" ]{{ item.option | regex_escape }}=\S+)?(.*")$'
+      replace: '\1 {{ item.option }}={{ item.value }}\2'
+    loop:
+      - item1:
+        option: net.ifnames
+        value: 0
+      - item2:
+        option: biosdevname
+        value: 0
