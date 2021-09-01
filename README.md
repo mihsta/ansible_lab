@@ -11,7 +11,13 @@
     cd /home/ansible/
 ## ansible commands  
     ansible --version
-    ansible all -i inventory --list-hosts
+    ansible all -i inventory --list-hosts -v
+    nano /etc/ansible/ansible.cfg
+    ansible -m ping all
+    ansible-doc -l
+    ansible-doc package
+    ansible-doc -s package
+    ansible-playbook --syntax-check example.yaml
 ## vagrant commands
     vagrant init hashicorp/bionic64  
     vagrant up  
