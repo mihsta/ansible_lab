@@ -16,9 +16,8 @@
 
   tasks:
   - name: Users creation    
-    ansible.builtin.user:
-      #name:    
-      debug: "{{ item }}"
+    ansible.builtin.debug:
+      msg: "{{ item }}"
     loop:
       - Alice
       - Bob
