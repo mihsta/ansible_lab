@@ -1,3 +1,12 @@
+#Напишите плейбук для создания пользователей Alice, Bob, Carol. 
+#Для каждого пользователя нужно задать имя, 
+#адрес почты в комментарии (username@example.com), 
+#домашнюю папку, пароль в зашифрованном виде – 
+#в виде зашифрованной переменной 
+#или из отдельного шифрованного файла на выбор. 
+#Кроме пароля больше ничего шифровать не нужно. 
+#У уже созданных аккаунтов пароль менять не нужно.
+
 - name: edit grub
   hosts: all
   user: ansible
@@ -6,15 +15,11 @@
   become_user: root
 
   tasks:
-  - name: Grub edit
-    replace:
-      path: /etc/default/grub
-      regexp: '^(GRUB_CMDLINE_LINUX=(?:(?![" ]{{ item.option | regex_escape }}=).)*)(?:[" ]{{ item.option | regex_escape }}=\S+)?(.*")$'
-      replace: '\1 {{ item.option }}={{ item.value }}\2'
+  - name: Users creation    
+    ansible.builtin.user:
+      #name:    
+      debug: "{{ item }}"
     loop:
-      - item1:
-        option: net.ifnames
-        value: 0
-      - item2:
-        option: biosdevname
-        value: 0
+      - Alice
+      - Bob
+      - Carol  
