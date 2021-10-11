@@ -14,11 +14,15 @@
   become_method: sudo
   become_user: root
 
+  vars:
+    names:
+      - Alice
+      - Bob
+      - Carol
+  
   tasks:
   - name: Users creation    
     ansible.builtin.debug:
       msg: "{{ item }}"
-    loop:
-      - Alice
-      - Bob
-      - Carol  
+  with_items:
+    - names
