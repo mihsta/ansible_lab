@@ -1,0 +1,13 @@
+---
+
+- hosts: all  
+  gather_facts: no  
+  vars:
+    usernames:
+     - Alice
+     - Bob
+
+  tasks:
+  - include_tasks: add_user.yml
+    with_items:
+      "{{ usernames }}"
