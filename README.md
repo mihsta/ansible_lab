@@ -18,6 +18,10 @@
     ansible-doc package
     ansible-doc -s package
     ansible-playbook -v playbook.yml
+
+    ansible-vault encrypt_string "PassAlice" --name "pass" --vault-password-file .ansible_pass
+    ansible-playbook pb_creating.yml --vault-password-file .ansible_pass  -v
+
 ## regex
     https://regex101.com/
     https://question-it.com/questions/2028065/ansible-lineinfile-izmenit-stroku      
