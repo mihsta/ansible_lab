@@ -1,5 +1,5 @@
 ---
 
- - name: The user {{ item }}
+ - name: The user {{ item.name }}
    debug: 
-     msg: The user {{ item }} created
+     msg: The user {{ item.name }} created. The user's comment is {{ item.comment }} The user's password is {{ item.pass }}

@@ -3,9 +3,8 @@
 - hosts: all  
   gather_facts: no  
   vars_files:
-    - list_users.yml
-
+    - users.yml
   tasks:
   - include_tasks: add_user.yml
     loop:
-      "{{ usernames }}"
+      "{{ users }}"
