@@ -4,6 +4,7 @@
    ansible.builtin.user:
      name: "{{ item.name }}"
      create_home: yes 
+     home: "{{ item.home }}"
      comment: "{{ item.comment }}"
      password: "{{ item.pass|password_hash('sha512') }}"
      update_password: on_create
