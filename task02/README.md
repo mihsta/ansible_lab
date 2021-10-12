@@ -1,3 +1,7 @@
+### how to use:
+> bash play.sh
+
+### The task02 description: 
 Write a playbook that creates users Alice, Bob, Carol.
 
 For each user, you must specify:
