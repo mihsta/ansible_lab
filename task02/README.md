@@ -1,9 +1,8 @@
-Напишите плейбук для создания пользователей Alice, Bob, Carol. 
-Для каждого пользователя нужно задать имя, 
-адрес почты в комментарии (username@example.com), 
-домашнюю папку, пароль в зашифрованном виде – 
-в виде зашифрованной переменной 
-или из отдельного шифрованного файла на выбор. 
-Кроме пароля больше ничего шифровать не нужно. 
-У уже созданных аккаунтов пароль менять не нужно.
-
+Write a playbook that creates users Alice, Bob, Carol.
+For each user, you must specify:
+      - name;
+      - email address in the comment (username@example.com);
+      - home folder;
+      - encrypted password.
+The password must be an encrypted variable or from a separate encrypted file of your choice. Only encrypt the password, you don't need to encrypt anything else.
+You do not need to change the password for the already created accounts.
