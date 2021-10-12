@@ -32,6 +32,11 @@
     vagrant destroy  
     vagrant box list
 ## git commands
+    ssh -vT git@github.com
+    git clone git@github.com:mihsta/ansible_lab.git 
+    git remote set-url origin git@github.com:mihsta/ansible_lab.git   
     git log --all --oneline --graph --decorate  
     git checkout env  
     git checkout main  
+    
+    
