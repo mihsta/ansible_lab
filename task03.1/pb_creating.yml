@@ -1,0 +1,10 @@
+---
+
+- hosts: all  
+  gather_facts: no  
+  vars_files:
+    - users.yml
+  tasks:
+  - include_tasks: add_user.yml
+    loop:
+      "{{ users }}"
