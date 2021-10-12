@@ -1,5 +1,12 @@
 ---
 
  - name: The user {{ item.name }}
+   ansible.builtin.user:
+     name: "{{ item.name }}"
+     comment: "{{ item.comment }}"
+     password: "{{ item.pass|password_hash('sha512') }}"
+     update_password: on_create
+     state: present
+ - name: Debug info about user {{ item.name }}
    debug: 
      msg: The user {{ item.name }} created. The user's comment is {{ item.comment }} The user's password is {{ item.pass }}
