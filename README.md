@@ -38,5 +38,8 @@
     git log --all --oneline --graph --decorate  
     git checkout env  
     git checkout main  
+    git tag
+    git push --tags
+
     
     
