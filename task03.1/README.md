@@ -1,10 +1,11 @@
 ### how to use:
-> bash play.sh
+> bash play.sh -e msg='Custom message'
 
 ### The task03.1 description: 
--	Сделайте роль для установки Apache, используя плейбук из первого домашнего задания. Требования те же:
--	установка пакета httpd;
--	включение службы веб-сервера и проверка, что он запущен;
--	создание файла /var/www/html/index.html;
--	открытие необходимых для работы веб-сервера портов брендмауэра.
-Хотелось бы увидеть использование переменных (в том числе фактов), хендлеров, шаблонов и т.п., что мы рассматривали в рамках нашего курса.
+- Make a role for the Apache installation using the playbook from task01.
+The requirements are the same:
+- installation of the httpd package;
+- enabling the web server service and checking its operation;
+- creating a file /var/www/html/index.html;
+- opening the firewall ports required for the web server to work.
+There should be use of variables (including facts), handlers, templates, etc.
