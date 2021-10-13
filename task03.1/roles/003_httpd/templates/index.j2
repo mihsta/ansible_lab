@@ -1,0 +1,4 @@
+Index.html from j2 template
+{{ ansible_facts['nodename'] }} - uptime: {{ (ansible_uptime_seconds / 60 )| round }} minutes
+Playbook last time executed: {{ ansible_date_time["date"]}} {{ ansible_date_time["time"] }}
+{{ msg }}

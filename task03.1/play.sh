@@ -1,1 +1,3 @@
- ansible-playbook pb_creating.yml --vault-password-file .ansible_pass  -v
+ansible-playbook pb_httpd.yml -v $1 $2
+curl node1.example.com
+curl node2.example.com

@@ -1,0 +1,7 @@
+---
+- name: install httpd role playbook
+  gather_facts: yes
+  hosts: all
+  
+  roles:
+    - role: 003_httpd

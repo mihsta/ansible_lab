@@ -1,0 +1,33 @@
+---
+# tasks file for 003_httpd
+  - name: Install packages
+    package: name={{ item }} state=present
+    with_items:
+      - 'httpd'
+      - 'firewalld'
+
+  - ansible.builtin.debug:
+      msg: "runs when you use debug"
+    tags: [ never, debug ]
+
+  - name: Create html-file frim template
+    vars:
+      msg: "Welcome to my web server"
+    template:
+      src: index.j2
+      dest: /var/www/html/index.html
+    notify:
+     - Service reload
+
+  - name: Service start
+    service: name={{ item }} state=started enabled=yes
+    with_items:
+      - 'httpd'
+      - 'firewalld'
+  - name: Open http-port
+    firewalld:      
+      service: http
+      permanent: yes
+      state: enabled
+      immediate: yes
+      
