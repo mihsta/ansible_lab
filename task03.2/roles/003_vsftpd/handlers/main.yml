@@ -1,6 +1,9 @@
 ---
 # handlers file for 003_vsftpd
-  - name: service reload
-    service: name={{ item }} state=reloaded  enabled=yes
+  - name: service restart
+    service: 
+      name: "{{ item }}"
+      state: restarted
+      enabled: yes
     with_items:
       - 'vsftpd'
