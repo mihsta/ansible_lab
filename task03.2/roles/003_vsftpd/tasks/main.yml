@@ -18,7 +18,7 @@
   - name: instal libsemanage-python
       pip:
         name: libsemanage-python
-  - name: instal libsemanage-python
+  - name: instal libselinux-python
       pip:
         name: libselinux-python
 
