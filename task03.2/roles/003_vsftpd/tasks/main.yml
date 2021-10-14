@@ -22,7 +22,7 @@
       src: index.j2
       dest: /var/www/html/index.html
     notify:
-     - service reload
+     - service restart
 
   - name: create readme file
     copy:
