@@ -15,6 +15,18 @@
     with_items:      
       - 'vsftpd'
 
+  - name: create upload dir
+    ansible.builtin.file:
+      path: /var/ftp/pub/upload
+      state: directory
+      mode: '0755'
+      
+  - name: allow_ftpd_anon_write SELinux bool
+    seboolean:
+      name: allow_ftpd_anon_write
+      state: yes
+      persistent: yes
+
   - name: config vsftpd with template
     vars:
       anonymous_enable: yes
@@ -25,7 +37,8 @@
       src: vsftpd.j2
       dest: /etc/vsftpd/vsftpd.conf
     notify:
-     - service restart
+     - service restart  
+    
 
   - name: create readme file
     copy:
