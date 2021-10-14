@@ -20,9 +20,9 @@
       path: /var/ftp/pub/upload
       state: directory
       mode: '0755'
-      
+
   - name: allow_ftpd_anon_write SELinux bool
-    seboolean:
+    ansible.posix.seboolean:
       name: allow_ftpd_anon_write
       state: yes
       persistent: yes
