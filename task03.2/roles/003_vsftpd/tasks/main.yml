@@ -15,6 +15,13 @@
     with_items:      
       - 'vsftpd'
 
+  - name: instal libsemanage-python
+      pip:
+        name: libsemanage-python
+  - name: instal libsemanage-python
+      pip:
+        name: libselinux-python
+
   - name: create upload dir
     ansible.builtin.file:
       path: /var/ftp/pub/upload
