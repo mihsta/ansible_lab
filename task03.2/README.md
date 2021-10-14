@@ -13,7 +13,8 @@ sestatus -v -b
 setsebool -P allow_ftpd_anon_write  on
 
 ### The task03.2 description: 
-    - 	Напишите роль, которая устанавливает и включает FTP (пакет vsftpd), открывает необходимые порты. Определите в переменных необходимые параметры конфигурации ftp-сервера и используйте их в шаблоне для файла конфигурации vsftpd.conf:
-    - разрешен анонимный доступ в папку /var/ftp/pub и аплоад файлов в папку /var/ftp/pub/upload;
-    - настроены необходимые разрешения и соответствующий SELinux контекст: "ftpd_anon_write" boolean - значение "on" (edited).
+    - Write a role that installs and enables FTP (vsftpd package), opens the necessary ports. 
+    - Define the required ftp server configuration parameters and use them in the template for the vsftpd.conf configuration file:
+    - allowed anonymous access to the / var / ftp / pub folder and upload files in the / var / ftp / pub / upload folder;
+    - the required permission and the corresponding SELinux are configured: "ftpd_anon_write" boolean value "on" (edited).
 
