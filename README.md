@@ -1,14 +1,20 @@
-# ansible_lab_env
-  ## user ansible ssh gen & copy
+# ansible_lab_env installation sequence
+    install virtualbox
+    install vagrant
+    install gitscm
+    git clone https://github.com/mihsta/ansible_lab.git
+    cd ansible_lab/ansible_lab_env
+    vagrant up 
+    vagrant ssh control
     su ansible  
     password  
+    cd /home/ansible/
     ssh-keygen -q -N "" -f /home/ansible/.ssh/id_rsa <<<y >/dev/null 2>&1  
     sudo ssh-copy-id -i /home/ansible/.ssh/id_rsa.pub ansible@node1.example.com -f  
     sudo ssh-copy-id -i /home/ansible/.ssh/id_rsa.pub ansible@node2.example.com -f  
-    
-    ssh-keygen
-    ssh-copy-id node1 && ssh-copy-id node2
-    cd /home/ansible/
+    git clone git@github.com:mihsta/ansible_lab.git
+    cd ansible_lab
+
 ## ansible commands  
     ansible --version
     ansible all -i inventory --list-hosts -v
