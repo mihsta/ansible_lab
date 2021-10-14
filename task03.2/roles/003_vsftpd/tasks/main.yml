@@ -26,7 +26,7 @@
   - name: allow_ftpd_anon_write SELinux bool
     ansible.posix.seboolean:
       name: allow_ftpd_anon_write
-      state: yes
+      state: no
       persistent: yes
 
   - name: config vsftpd with template
