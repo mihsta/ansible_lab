@@ -6,7 +6,7 @@
       state: present
     with_items:
       - 'vsftpd'
-      - 'python3'
+      - 'libselinux-python3'
 
   - name: enable vsftpd
     service: 
@@ -15,12 +15,6 @@
       enabled: yes
     with_items:      
       - 'vsftpd'
-
-  - name: instal libsemanage-python
-    pip:
-     name: 
-      - libsemanage-python
- #     - libselinux-python
 
   - name: create upload dir
     ansible.builtin.file:
