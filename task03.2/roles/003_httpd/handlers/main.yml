@@ -1,7 +1,6 @@
 ---
-# handlers file for 003_httpd
-  - name: Service reload
+# handlers file for 003_vsftpd
+  - name: service reload
     service: name={{ item }} state=reloaded  enabled=yes
     with_items:
-      - 'httpd'
-      - 'firewalld'
+      - 'vsftpd'

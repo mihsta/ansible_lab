@@ -1,33 +1,37 @@
 ---
-# tasks file for 003_httpd
-  - name: Install packages
-    package: name={{ item }} state=present
+# tasks file for 003_vsftd
+  - name: install vsftpd
+    package: 
+      name: "{{ item }}" 
+      state: present
     with_items:
-      - 'httpd'
-      - 'firewalld'
+      - 'vsftpd'  
 
-  - ansible.builtin.debug:
-      msg: "runs when you use debug"
-    tags: [ never, debug ]
+  - name: enable vsftpd
+    service: 
+      name: "{{ item }}"
+      state: started 
+      enabled: yes
+    with_items:      
+      - 'vsftpd'
 
-  - name: Create html-file frim template
+  - name: config vsftpd
     vars:
       msg: "Welcome to my web server"
     template:
       src: index.j2
       dest: /var/www/html/index.html
     notify:
-     - Service reload
+     - service reload
 
-  - name: Service start
-    service: name={{ item }} state=started enabled=yes
-    with_items:
-      - 'httpd'
-      - 'firewalld'
-  - name: Open http-port
+  - name: open ftp-port
     firewalld:      
-      service: http
+      service: ftp
       permanent: yes
       state: enabled
       immediate: yes
       
+  - name: debug info
+    ansible.builtin.debug:
+      msg: "runs when you use debug"
+    tags: [ never, debug ]
