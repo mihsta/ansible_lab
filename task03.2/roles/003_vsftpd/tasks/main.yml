@@ -7,7 +7,7 @@
     with_items:
       - 'vsftpd'
       - 'libselinux-python3'
-      - 'libsemanage-python'
+      - 'libsemanage-python3'
 
   - name: enable vsftpd
     service: 
