@@ -23,9 +23,9 @@
       state: directory
       mode: '0755'
 
-  - name: ftpd_anon_write SELinux bool
+  - name: allow_ftpd_anon_write SELinux bool
     ansible.posix.seboolean:
-      name: ftpd_anon_write
+      name: allow_ftpd_anon_write
       state: yes
       persistent: yes
 
