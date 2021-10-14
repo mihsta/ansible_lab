@@ -21,7 +21,7 @@
     ansible.builtin.file:
       path: /var/ftp/pub/upload
       state: directory
-      mode: "u+wx,u-r,g+rwxs,o-rwx"
+      mode: '0777'
 
   - name: allow_ftpd_anon_write SELinux bool
     ansible.posix.seboolean:
