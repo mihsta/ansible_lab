@@ -15,12 +15,15 @@
     with_items:      
       - 'vsftpd'
 
-  - name: config vsftpd
+  - name: config vsftpd with template
     vars:
-      msg: "Welcome to my web server"
+      anonymous_enable: yes
+      local_enable: yes
+      write_enable: yes
+      anon_upload_enable: yes
     template:
-      src: index.j2
-      dest: /var/www/html/index.html
+      src: vsftpd.j2
+      dest: /etc/vsftpd/vsftpd.conf
     notify:
      - service restart
 
