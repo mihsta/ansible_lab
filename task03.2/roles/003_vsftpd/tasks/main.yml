@@ -6,7 +6,7 @@
       state: present
     with_items:
       - 'vsftpd'
-      - 'pip3'
+      - 'python3'
 
   - name: enable vsftpd
     service: 
