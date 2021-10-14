@@ -28,7 +28,7 @@
       mode: '0755'
 
   - name: allow_ftpd_anon_write SELinux bool
-    ansible.posix.seboolean:
+    seboolean:
       name: allow_ftpd_anon_write
       state: yes
       persistent: yes
