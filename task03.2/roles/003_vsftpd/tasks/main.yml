@@ -16,10 +16,10 @@
     with_items:      
       - 'vsftpd'
 
- # - name: instal libsemanage-python
- #   pip:
- #    name: 
- #     - libsemanage-python
+  - name: instal libsemanage-python
+    pip:
+     name: 
+      - libsemanage-python
  #     - libselinux-python
 
   - name: create upload dir
