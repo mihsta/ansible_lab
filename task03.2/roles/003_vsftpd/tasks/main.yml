@@ -16,11 +16,11 @@
     with_items:      
       - 'vsftpd'
 
-  - name: instal libsemanage-python
-    pip:
-     name: 
-      - libsemanage-python
-      - libselinux-python
+ # - name: instal libsemanage-python
+ #   pip:
+ #    name: 
+ #     - libsemanage-python
+ #     - libselinux-python
 
   - name: create upload dir
     ansible.builtin.file:
@@ -29,7 +29,7 @@
       mode: '0755'
 
   - name: allow_ftpd_anon_write SELinux bool
-    seboolean:
+    ansible.posix.seboolean:
       name: allow_ftpd_anon_write
       state: yes
       persistent: yes
