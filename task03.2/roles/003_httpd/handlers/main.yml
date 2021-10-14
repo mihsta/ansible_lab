@@ -1,0 +1,7 @@
+---
+# handlers file for 003_httpd
+  - name: Service reload
+    service: name={{ item }} state=reloaded  enabled=yes
+    with_items:
+      - 'httpd'
+      - 'firewalld'
