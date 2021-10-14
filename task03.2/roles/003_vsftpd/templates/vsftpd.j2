@@ -6,4 +6,9 @@ xferlog_enable=YES
 connect_from_port_20=YES
 pam_service_name=YES
 userlist_enable=YES
+write_enable=YES
+anon_root=/var/ftp 
+anon_mkdir_write_enable=YES
+chown_uploads=YES
+
 #my IP address = {{ ansible_facts['default_ipv4']['address'] }}

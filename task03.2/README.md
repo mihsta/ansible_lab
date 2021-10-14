@@ -10,7 +10,6 @@ cd pub
 get README
 
 sestatus -v -b
-setsebool -P allow_ftpd_anon_write  on
 
 ### The task03.2 description: 
     - 	Напишите роль, которая устанавливает и включает FTP (пакет vsftpd), открывает необходимые порты. Определите в переменных необходимые параметры конфигурации ftp-сервера и используйте их в шаблоне для файла конфигурации vsftpd.conf:
