@@ -1,5 +1,5 @@
 ---
-- name: install httpd role playbook
+- name: install vsftpd role playbook
   gather_facts: yes
   hosts: all
   

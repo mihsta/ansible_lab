@@ -24,6 +24,13 @@
     notify:
      - service reload
 
+  - name: create readme file
+    copy:
+      content: "hello from ansible"
+      dest: /var/ftp/pub/README
+      force: no
+      mode: 0444
+
   - name: open ftp-port
     firewalld:      
       service: ftp
