@@ -16,11 +16,10 @@
       - 'vsftpd'
 
   - name: instal libsemanage-python
-      pip:
-        name: libsemanage-python
-  - name: instal libselinux-python
-      pip:
-        name: libselinux-python
+    pip:
+     name: 
+      - libsemanage-python
+      - libselinux-python
 
   - name: create upload dir
     ansible.builtin.file:
