@@ -1,16 +1,19 @@
 anonymous_enable={{ anonymous_enable }}
-anon_upload_enable={{ anon_upload_enable }}
-anon_root=/var/ftp/pub
-anon_mkdir_write_enable=YES
-write_enable=YES
 local_enable={{ local_enable }}
+write_enable=YES
+local_umask=022
+anon_umask=022
+anon_upload_enable={{ anon_upload_enable }}
 dirmessage_enable=YES
 xferlog_enable=YES
 log_ftp_protocol=YES
-local_umask=022
-anon_umask=022
 connect_from_port_20=YES
+anon_root=/var/ftp/pub
+anon_mkdir_write_enable=YES
+listen=YES
 pam_service_name=YES
 userlist_enable=YES
+anon_other_write_enable=YES
+
 
 #my IP address = {{ ansible_facts['default_ipv4']['address'] }}
