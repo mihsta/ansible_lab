@@ -18,3 +18,19 @@ setsebool -P allow_ftpd_anon_write  on
     - allowed anonymous access to the / var / ftp / pub folder and upload files in the / var / ftp / pub / upload folder;
     - the required permission and the corresponding SELinux are configured: "ftpd_anon_write" boolean value "on" (edited).
 
+anonymous_enable=True
+anon_upload_enable=True
+anon_root=/var/ftp/pub
+anon_mkdir_write_enable=YES
+write_enable=YES
+local_enable=True
+dirmessage_enable=YES
+xferlog_enable=YES
+log_ftp_protocol=YES
+local_umask=022
+anon_umask=022
+connect_from_port_20=YES
+pam_service_name=YES
+userlist_enable=YES
+
+#my IP address = 10.0.2.15
