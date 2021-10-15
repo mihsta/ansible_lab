@@ -51,15 +51,12 @@
       force: no
       mode: 0444
 
-  - name: Permit traffic for ftp service
-    firewalld:
-      port: "{{ item }}/tcp"
+  - name: open ftp-port
+    firewalld:      
+      service: ftp
       permanent: yes
       state: enabled
       immediate: yes
-    loop:
-      - "20-21"
-      - "30000-50000"
       
   - name: debug info
     ansible.builtin.debug:
