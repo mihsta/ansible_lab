@@ -56,6 +56,12 @@
       force: no
       mode: 0444
 
+  - name: Enable firewalld
+    service:
+      name: firewalld
+      state: started
+      enabled: yes
+      
   - name: open ftp-port
     firewalld:      
       service: ftp
