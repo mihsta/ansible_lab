@@ -38,13 +38,14 @@
 
   - name: config vsftpd with template
     vars:
-      anonymous_enable: "NO"
+      anonymous_enable: "YES"
       local_enable: "YES"
       write_enable: "YES"
       anon_upload_enable: "YES"
     template:
       src: vsftpd.j2
       dest: /etc/vsftpd/vsftpd.conf
+      force: yes
     notify:
      - service restart  
     
