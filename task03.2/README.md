@@ -34,3 +34,23 @@ pam_service_name=YES
 userlist_enable=YES
 
 #my IP address = 10.0.2.15
+
+anonymous_enable=YES
+local_enable=NO
+write_enable=YES
+local_umask=022
+anon_umask=022
+anon_upload_enable=YES
+dirmessage_enable=YES
+xferlog_enable=YES
+connect_from_port_20=YES
+xferlog_std_format=YES
+listen=YES
+listen_ipv6=NO
+pam_service_name=vsftpd
+userlist_enable=YES
+anon_root=/var/ftp/pub
+anon_other_write_enable=YES
+hide_ids=YES
+pasv_min_port=40000
+pasv_max_port=50000

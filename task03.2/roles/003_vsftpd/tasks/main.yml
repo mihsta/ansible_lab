@@ -61,7 +61,7 @@
       name: firewalld
       state: started
       enabled: yes
-      
+
   - name: open ftp-port
     firewalld:      
       service: ftp
