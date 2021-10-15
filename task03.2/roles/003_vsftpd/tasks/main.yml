@@ -30,6 +30,11 @@
       name: allow_ftpd_anon_write
       state: yes
       persistent: yes
+  - name: allow_ftpd_full_access SELinux bool
+    ansible.posix.seboolean:
+      name: allow_ftpd_full_access
+      state: yes
+      persistent: yes
 
   - name: config vsftpd with template
     vars:
