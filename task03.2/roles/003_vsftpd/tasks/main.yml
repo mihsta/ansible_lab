@@ -44,7 +44,8 @@
       anon_upload_enable: "YES"
     template:
       src: vsftpd.j2
-      dest: /etc/vsftpd/vsftpd.conf      
+      dest: /etc/vsftpd/vsftpd.conf
+      force: yes    
     notify:
      - service restart  
     
