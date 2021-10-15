@@ -38,10 +38,10 @@
 
   - name: config vsftpd with template
     vars:
-      anonymous_enable: "YES"
-      local_enable: "YES"
-      write_enable: "YES"
-      anon_upload_enable: "YES"
+      anonymous_enable: yes
+      local_enable: yes
+      write_enable: yes
+      anon_upload_enable: yes
     template:
       src: vsftpd.j2
       dest: /etc/vsftpd/vsftpd.conf      
