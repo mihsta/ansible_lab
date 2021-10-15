@@ -1,5 +1,5 @@
 ### how to use:
->on control node: install ansible-galaxy collection install ansible.posix
+>on control node install: ansible-galaxy collection install ansible.posix
 
 > bash play.sh
 
